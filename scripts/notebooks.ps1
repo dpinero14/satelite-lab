@@ -1,0 +1,1 @@
+.\.venv\Scripts\python.exe -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=satelite-lab --ExecutePreprocessor.timeout=3600 notebooks\01_el_satelite_cuenta_camiones.ipynb
