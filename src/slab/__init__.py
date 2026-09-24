@@ -32,10 +32,11 @@ STAC = "https://earth-search.aws.element84.com/v1"
 COLLECTION = "sentinel-2-l2a"
 
 # Las rutas del laboratorio, con un punto de referencia sobre cada una y el tramo a recorrer
-# desde ese punto, en km a lo largo de la línea del IGN (negativo hacia atrás).
+# desde ese punto, en km a lo largo de la línea del IGN (negativo hacia atrás). `half` es el
+# semiancho de la franja en píxeles (4 = ±40 m); la autopista necesita 8 para cubrir las dos calzadas.
 RUTAS = {
     "152": {"nombre": "RN 152, Puelches (La Pampa)", "lon": -65.9, "lat": -38.15, "km": (-60, 10), "que": "la ruta de la arena"},
-    "9": {"nombre": "RN 9, Bell Ville (Córdoba)", "lon": -62.7, "lat": -32.6, "km": (-30, 30), "que": "la autopista Rosario-Córdoba"},
+    "9": {"nombre": "RN 9, Bell Ville (Córdoba)", "lon": -62.7, "lat": -32.6, "km": (-30, 30), "que": "la autopista Rosario-Córdoba", "half": 8},
     "33": {"nombre": "RN 33, Firmat (Santa Fe)", "lon": -61.5, "lat": -33.45, "km": (-30, 30), "que": "el grano hacia Rosario"},
     "3": {"nombre": "RN 3, Garayalde (Chubut)", "lon": -66.6, "lat": -44.7, "km": (-30, 30), "que": "la Patagonia"},
 }

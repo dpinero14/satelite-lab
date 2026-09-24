@@ -39,7 +39,8 @@ allá. Un techo o un cartel, que no se mueven, son anómalos en las tres
 bandas en el mismo lugar.
 
 El detector trabaja sobre la ruta enderezada: se muestrea cada 10 m a lo
-largo del eje del IGN y ±40 m a lo ancho, y queda una franja por banda. El
+largo del eje del IGN y ±40 m a lo ancho (±80 m en autopista), y queda una
+franja por banda. El
 fondo es la mediana móvil a lo largo de la ruta, carril por carril; la
 anomalía se mide en unidades de dispersión robusta. Donde el azul es anómalo
 se buscan los perfiles de las tres bandas a lo largo y el corrimiento que
@@ -72,22 +73,29 @@ un arcoíris limpio. Por eso el número que se publica es un índice, vehículos
 en movimiento por 100 km por pasada, y lo que vale es la comparación con el
 mismo método.
 
-**La ruta de la arena, 2017 a 2026.** Dos pasadas de días hábiles por mes,
-sin nubes, sobre los mismos 70 km. El índice va de 4,8 por 100 km en 2017 y
-4,5 en 2020 a 7,7 en 2022 y 9,0 en 2023. La arena bombeada en Vaca Muerta,
-según el registro de fractura, fue de 0,7 millones de toneladas en 2017,
-0,7 en la pandemia de 2020, 3,0 en 2022 y 3,2 en 2023. El satélite sigue a
-la arena.
+**La ruta de la arena, 2017 a 2026.** 213 pasadas de días hábiles sin
+nubes, dos por mes, sobre los mismos 70 km. El índice está quieto entre 4,3
+y 5,3 vehículos por 100 km de 2017 a 2021, salta a 7,7 en 2022 y a 9,0 en
+2023, y queda entre 6,6 y 7,7 desde entonces. La arena bombeada en Vaca
+Muerta, según el registro de fractura, pasó de 0,7 millones de toneladas en
+2017 a 3,2 en 2023 y 5,1 en 2025. La correlación entre los dos es 0,76
+(0,72 en rangos): el satélite ve el cambio de escala de la ruta de la arena.
+Lo que no ve es el salto de 2025. Puede ser que el índice se sature, que
+parte de la arena nueva venga de Allen y no pase por acá, o las dos cosas;
+con estos datos no se puede separar.
 
 ![La arena y el satélite](docs/figures/arena_vs_satelite.png)
 
 **Cuatro rutas contra Vialidad.** Un año de pasadas (septiembre de 2025 a
-septiembre de 2026) sobre la autopista Rosario-Córdoba en Bell Ville, la
-RN 33 del grano en Firmat, la RN 3 patagónica en Garayalde y la RN 152. El
-satélite ve más en la RN 33, una ruta de dos manos llena de camiones, que
-en la autopista, donde Vialidad cuenta más vehículos: la muestra que ve el
-satélite no es proporcional al tránsito total. Los números finales están en
-el notebook.
+septiembre de 2026) sobre la RN 33 del grano en Firmat (28 vehículos por
+100 km), la RN 3 patagónica en Garayalde (20), la autopista Rosario-Córdoba
+en Bell Ville (19) y la RN 152 (7). Vialidad contó en esos tramos, en 2016,
+6.850, 1.800, 9.000 y 520 vehículos por día. El orden no coincide: la RN 3
+aparece con tanto como la autopista con una quinta parte del tránsito. El
+satélite ve sobre todo lo grande y rápido, y en la RN 3 casi todo lo que
+circula es camión; en la autopista, la mayoría son autos. En la autopista la
+franja se ensancha a ±80 m para cubrir las dos calzadas: con ±40 m se
+perdía entre un 20 y un 50 % de las detecciones.
 
 ![Cuatro rutas](docs/figures/rutas_vs_vialidad.png)
 

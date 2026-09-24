@@ -27,7 +27,7 @@ from slab.scenes import scene_crs_bounds, search, strip, valid_km, weekdays  # n
 warnings.filterwarnings("ignore")
 
 
-def run_scene(item, routes, rtn: str, lon: float, lat: float, km_from: float, km_to: float, paso_km: float = 10.0):
+def run_scene(item, routes, rtn: str, lon: float, lat: float, km_from: float, km_to: float, paso_km: float = 10.0, half: int = 4):
     """Recorre el tramo de la ruta en una escena; devuelve (detecciones, km válidos)."""
     crs, bounds = scene_crs_bounds(item)
     line = route_line(routes, rtn, crs, bounds)
@@ -40,7 +40,7 @@ def run_scene(item, routes, rtn: str, lon: float, lat: float, km_from: float, km
         s = None
         for intento in range(3):          # la lectura remota falla a veces (DNS, corte): se reintenta con espera
             try:
-                s = strip(item, line, a, b)
+                s = strip(item, line, a, b, half=half)
                 break
             except ValueError:
                 break
@@ -85,7 +85,7 @@ def main() -> None:
             continue
         t0 = time.time()
         try:
-            det, km = run_scene(e["item"], routes, args.ruta, cfg["lon"], cfg["lat"], *cfg["km"])
+            det, km = run_scene(e["item"], routes, args.ruta, cfg["lon"], cfg["lat"], *cfg["km"], half=cfg.get("half", 4))
         except Exception as ex:      # una escena rota no frena la serie
             print(f"  {e['fecha']} {e['id']}: error {type(ex).__name__}: {str(ex)[:80]}", flush=True)
             continue
